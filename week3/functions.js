@@ -79,4 +79,13 @@ function sum(number1, number2, number3, number4) {
   console.log(number1 + number2 + number3 + number4);
 }
 
-sum(1, 5, 3);
+const result = sum(1, 5, 3);
+console.log(result);
+
+function sumReturn(number1, number2, number3, number4) {
+  const result = number1 + number2 + number3 + number4;
+  return result;
+}
+
+const result2 = sumReturn(1, 5, 3, 10);
+console.log(result2);
