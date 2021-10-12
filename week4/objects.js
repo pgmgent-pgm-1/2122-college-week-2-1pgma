@@ -104,3 +104,63 @@ console.log(sentence.split(" "));
 
 const badString = "    Hoi  ";
 console.log(badString.trim()); // Hoi
+
+const date = new Date();
+console.log(date.getTime());
+console.log(date.getMonth());
+
+// creating objects
+// method 1
+const player1 = {
+  firstName: "Lionel",
+  lastName: "Messi",
+};
+// method 2
+const player2 = new Object();
+player2.firstName = "Cristiano";
+player2.lastName = "Ronaldo";
+console.log(player2);
+// method 3
+function Player(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+const player3 = new Player("Harry", "Kane");
+console.log(player3);
+// method 4
+const player4 = Object.create({});
+player4.firstName = "Charles";
+player4.lastName = "De Ketelaere";
+console.log(player4);
+
+const original = {
+  firstName: "Ruud",
+  lastName: "Vormer",
+  captain: true,
+};
+
+const name1 = "Ruud";
+let name2 = name1;
+name2 = "Roos";
+
+// copy with reference
+const duplicate = original;
+duplicate.firstName = "Roos";
+console.log(original.firstName); // Roos
+// copy without reference
+const duplicate2 = { ...original };
+
+const object1 = {
+  firstName: "Ruud",
+  lastName: "Vormer",
+  captain: true,
+};
+
+const object2 = {
+  firstName: "Ruud",
+  lastName: "Vormer",
+  captain: true,
+};
+
+console.log(original === duplicate); // true;
+console.log(object1 === object2); // false;
