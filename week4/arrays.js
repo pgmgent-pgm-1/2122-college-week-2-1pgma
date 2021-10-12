@@ -46,3 +46,80 @@ console.log(brands); // alfabetisch gesorteerd
 const newBrands = brands.slice(0, 2);
 console.log(newBrands);
 console.log(brands);
+
+const food = [
+  {
+    name: "Pizza",
+    healthy: false,
+  },
+  {
+    name: "Chips",
+    healthy: false,
+  },
+  {
+    name: "Zwan",
+    healthy: false,
+  },
+  {
+    name: "Sla",
+    healthy: true,
+  },
+];
+
+for (let i = 0; i < food.length; i++) {
+  console.log(food[i].name);
+}
+
+for (const f of food) {
+  console.log(f.name);
+}
+
+food.forEach(function (f) {
+  console.log(f.name);
+});
+
+food.forEach((f) => {
+  console.log(f.name);
+});
+
+function nonArrow() {
+  console.log("Non arrow");
+}
+
+const arrow = () => {
+  console.log("Arrow");
+};
+
+// FILTER function
+// long
+let healthyItems = food.filter((f) => {
+  if (f.healthy) {
+    return true;
+  } else {
+    return false;
+  }
+});
+// shorter
+healthyItems = food.filter((f) => {
+  return f.healthy;
+});
+
+// shortest
+healthyItems = food.filter((f) => f.healthy);
+console.log(healthyItems);
+
+// MAP function
+let mappedItems = food.map((f) => {
+  return `${f.name} is ${f.healthy ? "healthy" : "not healthy"}`;
+});
+// shorter
+mappedItems = food.map((f) => f.name);
+console.log(mappedItems); // ['Pizza', 'Chips', 'Zwan', 'Sla']
+
+const sla = food.find((f) => {
+  if (f.name === "Sla") {
+    return f;
+  }
+  return null;
+});
+console.log(sla);
